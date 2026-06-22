@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>500彩票网官方 · 信息卡片介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f9fd;
+            color: #1a2c3e;
+            line-height: 1.7;
+            padding: 1.2rem;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        /* 主视觉区 */
+        .hero {
+            background: linear-gradient(135deg, #0b3b4f 0%, #0f5c6e 50%, #1b7f8c 100%);
+            border-radius: 2rem;
+            padding: 2.8rem 2rem 2.4rem;
+            margin-bottom: 2.4rem;
+            color: #ffffff;
+            box-shadow: 0 12px 30px rgba(16, 84, 94, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(2px);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #d9f2f5;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 6px 16px rgba(14, 70, 80, 0.06);
+            border: 1px solid #e2edf3;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(16, 84, 94, 0.12);
+        }
+
+        .card-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: #e1f0f5;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            color: #0d5b6b;
+            font-size: 1.6rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+            color: #0f3f4e;
+        }
+
+        .card p {
+            color: #2d4a59;
+            font-size: 0.98rem;
+        }
+
+        .accent-border {
+            border-left: 4px solid #1b8a99;
+            padding-left: 1rem;
+            background: #f2f9fc;
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* 适合人群 用横向滚动卡片 */
+        .audience-section {
+            margin: 2.2rem 0;
+        }
+
+        .audience-section h2 {
+            font-size: 1.5rem;
+            color: #0b3b4f;
+            margin-bottom: 1.2rem;
+        }
+
+        .audience-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 0.6rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .audience-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .audience-scroll::-webkit-scrollbar-thumb {
+            background: #9cc5d1;
+            border-radius: 10px;
+        }
+
+        .audience-item {
+            flex: 0 0 160px;
+            background: white;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1rem;
+            scroll-snap-align: start;
+            border: 1px solid #d3e5ed;
+            box-shadow: 0 3px 8px rgba(12, 60, 72, 0.05);
+            text-align: center;
+        }
+
+        .audience-item .emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .audience-item strong {
+            display: block;
+            font-size: 1rem;
+            color: #0d4b5c;
+            margin-bottom: 0.2rem;
+        }
+
+        .audience-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: #3b6372;
+        }
+
+        /* 自然链接段落卡片 */
+        .link-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 2rem 1.8rem;
+            margin: 2.4rem 0 2rem;
+            box-shadow: 0 6px 18px rgba(14, 70, 80, 0.06);
+            border: 1px solid #d9e8ef;
+        }
+
+        .link-card p {
+            font-size: 1.05rem;
+            color: #1f3e4c;
+        }
+
+        .link-card a {
+            color: #0b6d7c;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #90c9d6;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .link-card a:hover {
+            color: #064754;
+            border-bottom-color: #064754;
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 1rem;
+            padding: 1rem 1.4rem;
+            border: 1px solid #dfeef4;
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+        }
+
+        .faq-item .q {
+            font-weight: 700;
+            color: #0b5a6a;
+            min-width: 1.8rem;
+        }
+
+        .faq-item .answer {
+            color: #2b5668;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #547b89;
+            border-top: 1px solid #d0e1e9;
+            padding-top: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .footer-note a {
+            color: #096676;
+            text-decoration: underline wavy #7fbccb 1px;
+            text-underline-offset: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <!-- HERO 主视觉 -->
+    <div class="hero">
+        <h1>信息聚合 · 思路与工具</h1>
+        <p>从数据筛选到策略思考，理解数字世界里的规律与选择。知识型视角，不夸大，不误导。</p>
+        <div class="badge">基于公开信息 · 内容卡片式展示</div>
+    </div>
+
+    <!-- 用途卡片 网格 -->
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>趋势观察</h3>
+            <p>长期数字分布呈现统计学特征，了解历史频率有助于形成理性判断。不预测，只提供视角。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🧠</div>
+            <h3>策略框架</h3>
+            <p>基于概率与资金管理的基础逻辑，帮助参与者建立自我约束规则，避免冲动决策。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">📚</div>
+            <h3>信息筛选</h3>
+            <p>在大量噪声中识别有效资讯，关注数据源与统计方法，是独立思考的第一步。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">⚖️</div>
+            <h3>心态建设</h3>
+            <p>认识到随机性与沉没成本，保持长期视角比短期得失更重要——这也是成熟参与者的共同特征。</p>
+        </div>
+    </div>
+
+    <!-- 适合人群 横向卡片 -->
+    <div class="audience-section">
+        <h2>这些内容适合谁？</h2>
+        <div class="audience-scroll">
+            <div class="audience-item">
+                <span class="emoji">🧐</span>
+                <strong>理性分析者</strong>
+                <span>喜欢用数据验证直觉</span>
+            </div>
+            <div class="audience-item">
+                <span class="emoji">📈</span>
+                <strong>策略爱好者</strong>
+                <span>关注逻辑与纪律</span>
+            </div>
+            <div class="audience-item">
+                <span class="emoji">🔄</span>
+                <strong>习惯复盘者</strong>
+                <span>定期回顾与调整</span>
+            </div>
+            <div class="audience-item">
+                <span class="emoji">🧘</span>
+                <strong>心态优先者</strong>
+                <span>追求长期舒适度</span>
+            </div>
+            <div class="audience-item">
+                <span class="emoji">📖</span>
+                <strong>入门学习者</strong>
+                <span>建立基本认知框架</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自然链接段落 -->
+    <div class="link-card">
+        <p>
+            如果你希望进一步了解数字分布与策略框架的交叉点，可以参考 
+            <a href="https://down-500lottery.com">500彩票网官方</a> 
+            所提供的历史数据板块，那里保留了较长时间维度的公开统计信息，有助于独立观察者进行横向对比。
+        </p>
+        <p style="margin-top: 1rem;">
+            需要说明的是：任何策略都建立在随机性之上，历史表现不代表未来结果。保持开放但审慎的态度，比追逐捷径更可靠。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 三个简洁问答 -->
+    <div class="faq-mini">
+        <div class="faq-item">
+            <span class="q">Q1</span>
+            <span class="answer">信息卡片中的策略是否保证效果？——不保证。所有内容只提供思考角度，不构成操作建议。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">Q2</span>
+            <span class="answer">为什么强调心态建设？——因为长期来看，情绪管理比具体方法更能影响最终体验。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">Q3</span>
+            <span class="answer">数据来自哪里？——基于公开可查的历史信息，整合为卡片式摘要，便于快速阅读。</span>
+        </div>
+    </div>
+
+    <!-- 结尾自然再放一次链接（不同句式） -->
+    <div class="footer-note">
+        <p>更多内容可在 <a href="https://down-500lottery.com">500彩票网官方</a> 中按需查阅，那里保留了原始数据与历史走势图表。</p>
+        <p style="margin-top: 0.6rem; font-style: italic;">内容仅供知识分享，不构成任何形式的引导。</p>
+    </div>
+</div>
+</body>
+</html>
