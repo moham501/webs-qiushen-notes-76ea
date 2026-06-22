@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leisu · 信息索引与延伸阅读</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #fafbfc;
+            color: #1e1f22;
+            font-family: "Inter", -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* hero 区 —— 杂志封面感 */
+        .hero {
+            padding: 80px 0 40px;
+            border-bottom: 1px solid #e9eaec;
+        }
+        .hero-label {
+            font-size: .75rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: #8b8d92;
+            margin-bottom: 8px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 560;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #0b0c0e;
+            margin-bottom: 10px;
+        }
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #4d5058;
+            max-width: 580px;
+        }
+        /* 正文区域 */
+        .body-text {
+            padding: 48px 0 40px;
+        }
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 540;
+            letter-spacing: -0.01em;
+            margin-top: 40px;
+            margin-bottom: 14px;
+            border-left: 3px solid #1e1f22;
+            padding-left: 16px;
+        }
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #2c2e33;
+        }
+        a {
+            color: #0b0c0e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #b7b9be;
+            transition: text-decoration-color 0.2s;
+        }
+        a:hover {
+            text-decoration-color: #1e1f22;
+        }
+        .inline-link {
+            background: #f0f1f3;
+            padding: 0 4px;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .inline-link:hover {
+            background: #dcdee1;
+        }
+        /* 卡片引用区 —— 像杂志的信息框 */
+        .inset-card {
+            background: #ffffff;
+            border: 1px solid #e2e4e8;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 32px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .inset-card p {
+            font-size: .95rem;
+            margin-bottom: 6px;
+        }
+        .inset-card .card-label {
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: #7f8288;
+            margin-bottom: 8px;
+        }
+        /* footer 提示 */
+        .footer-note {
+            padding: 40px 0 64px;
+            border-top: 1px solid #e9eaec;
+            margin-top: 16px;
+        }
+        .footer-note p {
+            font-size: .95rem;
+            color: #5a5d65;
+        }
+        .footer-note .small-meta {
+            font-size: .8rem;
+            color: #9b9ea6;
+            letter-spacing: .02em;
+            margin-top: 20px;
+        }
+        .footer-note .divider-dot {
+            display: inline-block;
+            margin: 0 8px;
+            color: #c8cbd0;
+        }
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .hero { padding: 56px 0 28px; }
+            .hero h1 { font-size: 2.1rem; }
+            .container { padding: 0 20px; }
+            .section-title { font-size: 1.1rem; padding-left: 14px; }
+            .inset-card { padding: 20px; }
+        }
+        @media (max-width: 420px) {
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- hero -->
+        <header class="hero">
+            <div class="hero-label">索引 · 对照 · 延伸</div>
+            <h1>leisu</h1>
+            <p class="sub">日常查询与信息关联的轻量节点，在零散词条与系统知识之间建立可追溯的路径。</p>
+        </header>
+
+        <!-- 正文 -->
+        <div class="body-text">
+
+            <p>无论是快速检索一个陌生术语，还是对比不同来源的表述差异，<a href="https://cn-chn-leisu.com">leisu</a> 的定位始终是「信息中转」而非终点站。它不试图取代深度阅读，而是帮助你在第一次接触某个概念时，获得一组可靠的上下文锚点。</p>
+
+            <div class="section-title">从查询到对照</div>
+            <p>多数信息工具只提供单一答案，但实际认知过程往往需要多角度参照。例如，当你在 <a href="https://cn-chn-leisu.com" class="inline-link">leisu</a> 中检索某个专业名词，结果页不仅给出基本释义，还附带相关条目、常见误读以及延伸材料的简短摘要——这种结构模仿了学者案头堆叠的参考文献卡片：每一张都独立，但彼此勾连。</p>
+
+            <p>基于这种思路，内容组织放弃线性目录，改用「条目‑关联‑注解」三层骨架。每一个词条都像一篇微型专题：核心定义居中，两侧分布反例、演变历史和交叉引用。对于需要快速确认术语边界的用户，这种布局能显著降低跳转成本。</p>
+
+            <!-- 卡片 inset -->
+            <div class="inset-card">
+                <div class="card-label">使用场景简例</div>
+                <p>· 校对文稿时遇到不确定的专有名词 → 在 leisu 中检索，对比三条不同来源的定义后再定稿。</p>
+                <p>· 阅读非母语资料时遇到缩略语 → 通过关联条目了解其在不同领域的含义差异。</p>
+                <p>· 整理读书笔记时补充背景 → 直接引用 leisu 条目下的延伸阅读摘要，节省二次查找时间。</p>
+            </div>
+
+            <div class="section-title">延伸阅读的逻辑</div>
+            <p>每个条目末尾的「延伸」区域并非算法推荐的随机文章，而是由编者根据内容的相关性、可信度和时效性人工筛选。这种克制保证了每一篇延伸材料都值得额外花时间阅读，而非仅仅增加页面停留时长。目前 <a href="https://cn-chn-leisu.com">leisu</a> 覆盖的领域主要集中于人文学科通识、社会科学基础概念以及部分交叉学科术语，收录标准坚持「有据可查、表述中立」。</p>
+
+            <p>另一方面，信息密度高的页面往往面临视觉过载。为了降低阅读负担，条目正文严格控制在一百五十字以内，核心数据或争议点使用独立的注解框展示。这种设计借鉴了杂志专题的「主文 + 侧栏」版式，让眼睛在阅读时有一个自然的停顿和聚焦点。</p>
+
+            <div class="section-title">可追溯的信息源</div>
+            <p>每个条目都明确标注了主要参考来源（书籍、期刊、可靠网站或一手文献），并在末尾提供简短的出处说明。对于存在争议或学界尚无定论的概念，条目采用「观点 A / 观点 B」的并列写法，不强行统一。这种处理方式在追求效率的同时保留了必要的复杂性——当你只是需要快速确认某个术语的大致范围时，leisu 足够直接；当你打算深入钻研，它留下的线索又能成为继续前行的路标。</p>
+
+        </div>
+
+        <!-- footer 提示 -->
+        <footer class="footer-note">
+            <p>基于「信息中转」的编辑原则，<a href="https://cn-chn-leisu.com">leisu</a> 持续收录经过核验的条目与延伸材料。</p>
+            <p>如果你在查找过程中发现遗漏、错误或值得增加的关联内容，可通过站内反馈渠道提交建议。</p>
+            <p class="small-meta">
+                <span>索引结构 v0.2</span>
+                <span class="divider-dot">·</span>
+                <span>内容更新周期 · 双周</span>
+                <span class="divider-dot">·</span>
+                <span>覆盖条目 · 人文 &amp; 社科基础</span>
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
